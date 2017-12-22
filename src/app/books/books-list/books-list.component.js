@@ -8,25 +8,43 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var core_1 = require("@angular/core");
 var BooksListComponent = (function () {
     function BooksListComponent() {
+        this.animals = ['zebra', 'moose'];
         this.imageWidth = 100;
         this.showImage = true;
         this.booksInStock = 2;
+        this.showMessage = "test";
         this.books = [{
-                bookAuthor: "Tom Jones",
-                bookTitle: "War and Peace 2",
-                bookPrice: "$29.95",
+                id: "1",
+                productCode: "ABC",
+                genre: "adsf",
+                specification: "specification",
+                author: "Tom Jones",
+                name: "War and Peace 2",
+                bookPrice: 29.95,
+                description: "books of history",
+                releaseDate: new Date('02/11/1921'),
+                inStock: true,
                 bookReview: 15,
-                bookImageUrl: "app/assets/images/656.jpg",
-            }, {
-                bookAuthor: "Tom Jones",
-                bookTitle: "War and Peace 2",
-                bookPrice: "$29.95",
-                bookReview: 15,
-                bookImageUrl: "app/assets/images/656.jpg",
+                starRating: 5,
+                imageUrl: "app/assets/images/656.jpg",
             }];
     }
+    BooksListComponent.prototype.ngOnInit = function () {
+        console.log('init', this.booksInStock);
+    };
+    BooksListComponent.prototype.ngOnChanges = function () {
+        console.log('new change detected');
+    };
+    BooksListComponent.prototype.changeMethod = function () {
+        this.animals = ['cat', 'dog'];
+        console.log('change method happened', this.animals);
+    };
     BooksListComponent.prototype.toggleImage = function () {
         this.showImage = !this.showImage;
+    };
+    BooksListComponent.prototype.onNotifyClicked = function (message) {
+        debugger;
+        this.showMessage = message;
     };
     return BooksListComponent;
 }());

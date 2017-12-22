@@ -1,19 +1,29 @@
 <div class="container">
     <section id="products">
     <div class="row">
+      <div class="container">
+        <h2>{{showMessage}}</h2>
+      </div>
         <div class="col-md-4" *ngFor="let book of books">
+            <bs-favorite [reviews]="book.bookReview" (notify)="onNotifyClicked($event)"></bs-favorite>
             <div class="thumbnail">
-              <img [src]="book.bookImageUrl" [style.width.px]= "imageWidth" *ngIf='showImage'>
+              <img [src]="book.imageUrl" [style.width.px]= "imageWidth" *ngIf='showImage'>
               <div [ngClass]="{'redClass':showImage, 'yellowClass':!showImage}">ngClass Test</div>
               <div class="caption">
                 <button class="btn btn-primary" (click)= 'toggleImage()'>
                   {{showImage ? 'Hide Image':'Show Image'}}
                 </button>
+                <button class="btn btn-warning" (click)= 'changeMethod()'>
+                  click me
+                </button>
                 <h4 class="pull-right">
-                  {{book.bookPrice}}
+                  {{book.bookPrice | currency: 'USD' : true}}
                 </h4>
-                <h4><a href="product.html">{{book.bookTitle}}</a></h4>
-                <p><b>Author: </b>{{book.bookAuthor}}</p>
+                <h4><a href="product.html">{{book.name}}</a></h4>
+                <p><b>Author: </b>{{book.author}}</p>
+                <p><b>Description: </b>{{book.description | limitChar:'10'}}</p>
+                <p><b>Published On: </b>{{book.releaseDate | date:'longDate'}}</p>
+                <p><b>In Stock: </b>{{book.inStock}}</p>
                     <span class="glyphicon glyphicon-star"></span>
                     <span class="glyphicon glyphicon-star"></span>
                     <span class="glyphicon glyphicon-star"></span>
