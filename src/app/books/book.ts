@@ -8,8 +8,8 @@ export interface IBook {
     genre:string;
     specification:string;
     inStock:boolean;
+    price:number;
     starRating:number;
     imageUrl:string;
-    bookPrice:number;
     bookReview?:number;
 }
