@@ -9,6 +9,7 @@ import { error } from 'util';
     templateUrl: 'books-list.component.html'
 })
 export class BooksListComponent implements OnInit, OnChanges{
+    favoriteMessage:string ="";
     animals:string[] = ['zebra', 'moose'];
     imageWidth:number = 100;
     showImage:boolean = true;
@@ -40,29 +41,16 @@ export class BooksListComponent implements OnInit, OnChanges{
     }
 
     showMessage:string="test";
-
-    // books:any[]=[{
-    //     id: "1",
-    //     productCode:"ABC",
-    //     genre:"adsf",
-    //     specification:"specification",
-    //     author: "Tom Jones",
-    //     name: "War and Peace 2",
-    //     bookPrice: 29.95,
-    //     description: "books of history",
-    //     releaseDate: new Date('02/11/1921'),
-    //     inStock: true,
-    //     bookReview: 15,
-    //     starRating: 5,
-    //     imageUrl:"app/assets/images/656.jpg",
-    // }];
     
     toggleImage():void{
         this.showImage = !this.showImage;
     }
 
     onNotifyClicked(message:string):void{
-        debugger;
         this.showMessage = message;
+    }
+
+    onFavoriteClicked(message:string):void{
+        this.favoriteMessage = message;
     }
 }

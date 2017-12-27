@@ -11,13 +11,59 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var core_1 = require("@angular/core");
 var books_service_1 = require("../books.service");
 var BooksListComponent = (function () {
+<<<<<<< HEAD
+<<<<<<< HEAD
+    function BooksListComponent() {
+        this.favoriteMessage = "";
+=======
     function BooksListComponent(_bookService) {
         this._bookService = _bookService;
+>>>>>>> eae7ec30bfb2b81a89715a9eea33b93d167ba3b2
+=======
+    function BooksListComponent(_bookService) {
+        this._bookService = _bookService;
+>>>>>>> eae7ec30bfb2b81a89715a9eea33b93d167ba3b2
         this.animals = ['zebra', 'moose'];
         this.imageWidth = 100;
         this.showImage = true;
         this.booksInStock = 2;
         this.showMessage = "test";
+<<<<<<< HEAD
+<<<<<<< HEAD
+        this.books = [{
+                id: "1",
+                productCode: "ABC",
+                genre: "adsf",
+                specification: "specification",
+                author: "Tom Jones",
+                name: "War and Peace 2",
+                bookPrice: 29.95,
+                description: "books of history",
+                releaseDate: new Date('02/11/1921'),
+                inStock: true,
+                bookReview: 15,
+                starRating: 5,
+                imageUrl: "app/assets/images/656.jpg",
+            },
+            {
+                id: "1",
+                productCode: "ABC",
+                genre: "adsf",
+                specification: "specification",
+                author: "Mike Jones",
+                name: "War and Peace 3",
+                bookPrice: 19.95,
+                description: "books of history",
+                releaseDate: new Date('02/11/1921'),
+                inStock: true,
+                bookReview: 18,
+                starRating: 5,
+                imageUrl: "app/assets/images/656.jpg",
+            }];
+=======
+>>>>>>> eae7ec30bfb2b81a89715a9eea33b93d167ba3b2
+=======
+>>>>>>> eae7ec30bfb2b81a89715a9eea33b93d167ba3b2
     }
     BooksListComponent.prototype.ngOnInit = function () {
         console.log('init', this.booksInStock);
@@ -53,8 +99,10 @@ var BooksListComponent = (function () {
         this.showImage = !this.showImage;
     };
     BooksListComponent.prototype.onNotifyClicked = function (message) {
-        debugger;
         this.showMessage = message;
+    };
+    BooksListComponent.prototype.onFavoriteClicked = function (message) {
+        this.favoriteMessage = message;
     };
     return BooksListComponent;
 }());
