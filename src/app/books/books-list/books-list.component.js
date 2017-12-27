@@ -12,8 +12,13 @@ var core_1 = require("@angular/core");
 var books_service_1 = require("../books.service");
 var BooksListComponent = (function () {
 <<<<<<< HEAD
+<<<<<<< HEAD
     function BooksListComponent() {
         this.favoriteMessage = "";
+=======
+    function BooksListComponent(_bookService) {
+        this._bookService = _bookService;
+>>>>>>> eae7ec30bfb2b81a89715a9eea33b93d167ba3b2
 =======
     function BooksListComponent(_bookService) {
         this._bookService = _bookService;
@@ -23,6 +28,7 @@ var BooksListComponent = (function () {
         this.showImage = true;
         this.booksInStock = 2;
         this.showMessage = "test";
+<<<<<<< HEAD
 <<<<<<< HEAD
         this.books = [{
                 id: "1",
@@ -54,6 +60,8 @@ var BooksListComponent = (function () {
                 starRating: 5,
                 imageUrl: "app/assets/images/656.jpg",
             }];
+=======
+>>>>>>> eae7ec30bfb2b81a89715a9eea33b93d167ba3b2
 =======
 >>>>>>> eae7ec30bfb2b81a89715a9eea33b93d167ba3b2
     }
