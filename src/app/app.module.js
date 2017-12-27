@@ -13,6 +13,10 @@ var books_list_component_1 = require("./books/books-list/books-list.component");
 var highlight_directive_1 = require("./shared/highlight.directive");
 var truncate_pipe_1 = require("./shared/pipes/truncate.pipe");
 var favorite_component_1 = require("./favorites/favorite.component");
+var books_service_1 = require("./books/books.service");
+var http_1 = require("@angular/http");
+var router_1 = require("@angular/router");
+var welcome_component_1 = require("../welcome/welcome.component");
 var AppModule = (function () {
     function AppModule() {
     }
@@ -20,9 +24,15 @@ var AppModule = (function () {
 }());
 AppModule = __decorate([
     core_1.NgModule({
-        imports: [platform_browser_1.BrowserModule, forms_1.FormsModule],
-        declarations: [app_component_1.AppComponent, books_list_component_1.BooksListComponent, highlight_directive_1.HighLightDirective, truncate_pipe_1.TruncatePipe, favorite_component_1.FavoriteComponent],
-        bootstrap: [app_component_1.AppComponent]
+        imports: [platform_browser_1.BrowserModule, forms_1.FormsModule, http_1.HttpModule, router_1.RouterModule.forRoot([
+                { path: 'welcome', component: welcome_component_1.WelcomeComponent },
+                { path: 'books', component: books_list_component_1.BooksListComponent },
+                { path: '', redirectTo: 'welcome', pathMatch: 'full' },
+                { path: '**', redirectTo: 'welcome', pathMatch: 'full' },
+            ])],
+        declarations: [app_component_1.AppComponent, books_list_component_1.BooksListComponent, highlight_directive_1.HighLightDirective, truncate_pipe_1.TruncatePipe, favorite_component_1.FavoriteComponent, welcome_component_1.WelcomeComponent],
+        bootstrap: [app_component_1.AppComponent],
+        providers: [books_service_1.BookService]
     })
 ], AppModule);
 exports.AppModule = AppModule;
