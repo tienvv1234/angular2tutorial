@@ -6,6 +6,7 @@ import {Component, OnInit, OnChanges} from '@angular/core';
     templateUrl: 'books-list.component.html'
 })
 export class BooksListComponent implements OnInit, OnChanges{
+    favoriteMessage:string ="";
     animals:string[] = ['zebra', 'moose'];
     imageWidth:number = 100;
     showImage:boolean = true;
@@ -40,6 +41,21 @@ export class BooksListComponent implements OnInit, OnChanges{
         bookReview: 15,
         starRating: 5,
         imageUrl:"app/assets/images/656.jpg",
+    },
+    {
+        id: "1",
+        productCode:"ABC",
+        genre:"adsf",
+        specification:"specification",
+        author: "Mike Jones",
+        name: "War and Peace 3",
+        bookPrice: 19.95,
+        description: "books of history",
+        releaseDate: new Date('02/11/1921'),
+        inStock: true,
+        bookReview: 18,
+        starRating: 5,
+        imageUrl:"app/assets/images/656.jpg",
     }];
     
     toggleImage():void{
@@ -47,7 +63,10 @@ export class BooksListComponent implements OnInit, OnChanges{
     }
 
     onNotifyClicked(message:string):void{
-        debugger;
         this.showMessage = message;
+    }
+
+    onFavoriteClicked(message:string):void{
+        this.favoriteMessage = message;
     }
 }

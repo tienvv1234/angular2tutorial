@@ -8,6 +8,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var core_1 = require("@angular/core");
 var BooksListComponent = (function () {
     function BooksListComponent() {
+        this.favoriteMessage = "";
         this.animals = ['zebra', 'moose'];
         this.imageWidth = 100;
         this.showImage = true;
@@ -27,6 +28,21 @@ var BooksListComponent = (function () {
                 bookReview: 15,
                 starRating: 5,
                 imageUrl: "app/assets/images/656.jpg",
+            },
+            {
+                id: "1",
+                productCode: "ABC",
+                genre: "adsf",
+                specification: "specification",
+                author: "Mike Jones",
+                name: "War and Peace 3",
+                bookPrice: 19.95,
+                description: "books of history",
+                releaseDate: new Date('02/11/1921'),
+                inStock: true,
+                bookReview: 18,
+                starRating: 5,
+                imageUrl: "app/assets/images/656.jpg",
             }];
     }
     BooksListComponent.prototype.ngOnInit = function () {
@@ -43,8 +59,10 @@ var BooksListComponent = (function () {
         this.showImage = !this.showImage;
     };
     BooksListComponent.prototype.onNotifyClicked = function (message) {
-        debugger;
         this.showMessage = message;
+    };
+    BooksListComponent.prototype.onFavoriteClicked = function (message) {
+        this.favoriteMessage = message;
     };
     return BooksListComponent;
 }());
