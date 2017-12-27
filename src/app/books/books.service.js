@@ -24,6 +24,10 @@ var BookService = (function () {
         var message = "Error status code " + error.status + " at " + error.url;
         return Observable_1.Observable.throw(message);
     };
+    BookService.prototype.getABook = function (id) {
+        return this.getBook().map(function (books) { return books.find(function (book) { return book.id === id; }); })
+            .do(function (data) { return console.log(data); });
+    };
     BookService.prototype.getBook = function () {
         return this._http
             .get('/api/book/books.json')

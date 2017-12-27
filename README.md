@@ -20,3 +20,21 @@ need to install
 
 tsconfig.js
 compileonsave : true (to compile TS to JS when TS files are saved set "compileOnSave" to true tsconfig.json file)
+
+- index.html
+	+ 4 files js es6-shim, zone, reflect, system.src needed for older browsers and the zone
+	+ systemjs.config this is a file that we use to load up all of our angular modules
+	+ System.import('main.js').catch(function(err){ console.error(err); }); for loading up all the defined modules before our app is started
+- systemjs.config.js
+	+ map object is defined where to look for important folders
+	+ package object defines which file is going to be used to bootstrap our application
+	+ packageNames that we define the angular packages we want to use in our application
+- main.ts
+	+ platformBrowserDynamic().bootstrapModule(AppModule); we are initilizing angular using the class called bootstrap, which is imported from the platform-browser-dynamic angular package
+- package.json
+	+ for install dependency
+	+ script area use to compile our typescript code into javascript, start our server 
+-tsconfig.json
+	+ this file provider the settings for our typescript compiler
+-typing.json
+	+ 

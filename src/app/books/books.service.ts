@@ -19,6 +19,11 @@ export class BookService{
         return Observable.throw(message);
     }
 
+    getABook(id:string): Observable<IBook> {
+        return this.getBook().map((books:IBook[]) => books.find(book => book.id === id))
+        .do(data => console.log(data))
+    }
+
     getBook(){
         return this._http
             .get('/api/book/books.json')

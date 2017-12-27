@@ -17,6 +17,7 @@ var books_service_1 = require("./books/books.service");
 var http_1 = require("@angular/http");
 var router_1 = require("@angular/router");
 var welcome_component_1 = require("../welcome/welcome.component");
+var book_details_component_1 = require("./books/book-details/book-details.component");
 var AppModule = (function () {
     function AppModule() {
     }
@@ -27,10 +28,11 @@ AppModule = __decorate([
         imports: [platform_browser_1.BrowserModule, forms_1.FormsModule, http_1.HttpModule, router_1.RouterModule.forRoot([
                 { path: 'welcome', component: welcome_component_1.WelcomeComponent },
                 { path: 'books', component: books_list_component_1.BooksListComponent },
+                { path: 'book/:id', component: book_details_component_1.BookDetailsComponent },
                 { path: '', redirectTo: 'welcome', pathMatch: 'full' },
                 { path: '**', redirectTo: 'welcome', pathMatch: 'full' },
             ])],
-        declarations: [app_component_1.AppComponent, books_list_component_1.BooksListComponent, highlight_directive_1.HighLightDirective, truncate_pipe_1.TruncatePipe, favorite_component_1.FavoriteComponent, welcome_component_1.WelcomeComponent],
+        declarations: [app_component_1.AppComponent, books_list_component_1.BooksListComponent, highlight_directive_1.HighLightDirective, truncate_pipe_1.TruncatePipe, favorite_component_1.FavoriteComponent, welcome_component_1.WelcomeComponent, book_details_component_1.BookDetailsComponent],
         bootstrap: [app_component_1.AppComponent],
         providers: [books_service_1.BookService]
     })

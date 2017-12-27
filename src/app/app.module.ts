@@ -10,14 +10,16 @@ import { BookService} from './books/books.service';
 import { HttpModule} from '@angular/http';
 import { RouterModule } from '@angular/router';
 import { WelcomeComponent } from '../welcome/welcome.component';
+import { BookDetailsComponent } from './books/book-details/book-details.component';
 @NgModule({
   imports:      [ BrowserModule, FormsModule, HttpModule, RouterModule.forRoot([
     {path:'welcome', component:WelcomeComponent},
     {path:'books', component:BooksListComponent},
+    {path:'book/:id', component:BookDetailsComponent},
     {path:'', redirectTo:'welcome', pathMatch:'full'},
     {path:'**', redirectTo:'welcome', pathMatch:'full'},
   ]) ],
-  declarations: [ AppComponent, BooksListComponent, HighLightDirective, TruncatePipe, FavoriteComponent, WelcomeComponent ],
+  declarations: [ AppComponent, BooksListComponent, HighLightDirective, TruncatePipe, FavoriteComponent, WelcomeComponent, BookDetailsComponent ],
   bootstrap:    [ AppComponent ],
   providers: [ BookService ]
 })
