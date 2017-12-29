@@ -45,7 +45,9 @@ compileonsave : true (to compile TS to JS when TS files are saved set "compileOn
    event.preventDefault();
    event.stopPropagation();
 }
+
 4. # for variable declaration. (local variables or tempalte variable tạo ra để reference đến DOM object của nó và có thể đc sử đụng khắm nơi trong template và có thể chấm đc các thuộc tính và phương thức của ref) (cái này để check github) (cái này để check ở developer)
+
 for exp : <input type="text" #name>
 				{{ name.value }}
 One of the useful uses of local variables is when we want to execute some kind of action on another element.
