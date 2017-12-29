@@ -1,4 +1,4 @@
-# angular2tutorial
+# angular2tutorial and github
 need to install 
 - node version 4.6.x or greater
 
